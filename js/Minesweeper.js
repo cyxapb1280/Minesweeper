@@ -211,12 +211,14 @@ function Minesweeper(height, width, mines) {
 
     function setMines (firstX, firstY) {
         var randX, randY;
+        var clearDist = 2;
         for(var i = 0; i < mines; i++){
             randX = Math.floor(Math.random() * width);
             randY = Math.floor(Math.random() * height);
 
-            if(randX === firstX && randY === firstY){
-                i++;
+            if((randX >= firstX - clearDist && randX <= firstX + clearDist) &&
+                (randY >= firstY - clearDist && randY <= firstY + clearDist)) {
+                i--;
                 continue;
             }
 
@@ -397,6 +399,6 @@ function Minesweeper(height, width, mines) {
     }
 }
 
-var game = new Minesweeper(16, 30, 99);
+var game = new Minesweeper(9, 9, 5);
 game.initializeCanvas();
 game.drawMap();
