@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <script src="http://chaijs.com/chai.js"></script>
+    <script>
+        var assert = chai.assert;
+    </script>
+</head>
+
+<body>
+
+<script src="../js/cell.js"></script>
+<script src="../js/minesweeper.js"></script>
+<script src="sandBox.js"></script>
+<script src="cellTest.js"></script>
+<script src="minesweeperTest.js"></script>
+
+<div id="mocha"></div>
+
+<script>
+    mocha.run();
+</script>
+</body>
+
+</html>
