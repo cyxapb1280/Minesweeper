@@ -1,0 +1,32 @@
+body {
+    font-family: "Arial";
+    font-size: 15px;
+}
+div {
+    float: left;
+    padding: 10px;
+    background-color: #b7d7eb;
+    margin: 2px;
+}
+
+input {
+    margin: 3px;
+}
+#start {
+    width: 100px;
+}
+
+#timer, #mines {
+    float: left;
+    width: 50%;
+    margin-top: 2px;
+    font-size: 34px;
+    color: #45759e;
+}
+#mines {
+    text-align: right;
+}
+
+.params {
+    width: 60px;
+}

@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="http://www.quasimondo.com/StackBlurForCanvas/StackBlur.js"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MineSweeper</title>
 </head>
 <body>
+<div>
+    <input type="button" id="start" value="START" onclick="startButtonClick()"> <br>
+    <input type="radio" name="diff" value="easy" onclick="changeParamsInputs()">Beginner <br>
+    <input type="radio" name="diff" value="normal" onclick="changeParamsInputs()">Intermediate<br>
+    <input type="radio" name="diff" value="hard" checked onclick="changeParamsInputs()" >Advanced<br>
+    <input type="radio" name="diff" id="customRadio" value="custom" onclick="changeParamsInputs()">Custom<br>
+    Height:<br>
+    <input class="params" id="heightInput" type="number" disabled value="16"><br>
+    Width:<br>
+    <input class="params" id="widthInput" type="number" disabled value="30"><br>
+    Mines:<br>
+    <input class="params" id="minesInput" type="number" disabled value="99"><br>
+</div>
 
-<canvas id="canvas"> </canvas>
-<script src="js/Minesweeper.js"></script>
+<div>
+    <canvas id="canvas"> </canvas><br>
+    <span id="timer">0:00</span>
+    <span id="mines"><img src="img/mine.png"><label id="minesCount">0</label></span>
+
+</div>
+<script src="js/cell.js"></script>
+<script src="js/minesweeper.js"></script>
+<script src="js/canvasDrawer.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
