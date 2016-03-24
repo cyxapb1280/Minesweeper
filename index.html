@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="http://www.quasimondo.com/StackBlurForCanvas/StackBlur.js"></script>
-    <meta charset="UTF-8">
-    <title>MineSweeper</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="http://www.quasimondo.com/StackBlurForCanvas/StackBlur.js" defer></script>
+  <script src="js/component.js" defer></script>
+  <script src="js/controlPanel.js" defer></script>
+  <script src="js/cell.js" defer></script>
+  <script src="js/minesweeper.js" defer></script>
+  <script src="js/canvasDrawer.js" defer></script>
+  <script src="js/timer.js" defer></script>
+  <script src="js/minesCounter.js" defer></script>
+  <script src="js/page.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <meta charset="UTF-8">
+  <title>MineSweeper</title>
 </head>
 <body>
-<div>
-    <input type="button" id="start" value="START" onclick="startButtonClick()"> <br>
-    <input type="radio" name="diff" value="easy" onclick="changeParamsInputs()">Beginner <br>
-    <input type="radio" name="diff" value="normal" onclick="changeParamsInputs()">Intermediate<br>
-    <input type="radio" name="diff" value="hard" checked onclick="changeParamsInputs()" >Advanced<br>
-    <input type="radio" name="diff" id="customRadio" value="custom" onclick="changeParamsInputs()">Custom<br>
+<div data-component="page">
+  <div data-component="control-panel">
+    <input type="button" value="START" data-selector="start-button"> <br>
+    <input type="radio" name="diff" value="easy" data-selector="diff-radio">Beginner <br>
+    <input type="radio" name="diff" value="normal" data-selector="diff-radio">Intermediate<br>
+    <input type="radio" name="diff" value="hard" checked data-selector="diff-radio">Advanced<br>
+    <input type="radio" name="diff" value="custom" data-selector="diff-radio">Custom<br>
     Height:<br>
-    <input class="params" id="heightInput" type="number" disabled value="16"><br>
+    <input class="params" type="number" disabled value="16" data-selector="height-input"><br>
     Width:<br>
-    <input class="params" id="widthInput" type="number" disabled value="30"><br>
+    <input class="params" type="number" disabled value="30" data-selector="width-input"><br>
     Mines:<br>
-    <input class="params" id="minesInput" type="number" disabled value="99"><br>
+    <input class="params" type="number" disabled value="99" data-selector="mines-input"><br>
+  </div>
+
+  <div>
+    <canvas id="canvas" data-component="canvas"></canvas>
+    <br>
+    <span class="timer" data-component="timer">0:00</span>
+    <span class="mines"><img src="img/mine.png"><label data-component="mines-count">0</label></span>
+  </div>
 </div>
 
-<div>
-    <canvas id="canvas"> </canvas><br>
-    <span id="timer">0:00</span>
-    <span id="mines"><img src="img/mine.png"><label id="minesCount">0</label></span>
-
-</div>
-<script src="js/cell.js"></script>
-<script src="js/minesweeper.js"></script>
-<script src="js/canvasDrawer.js"></script>
-<script src="js/main.js"></script>
 </body>
 </html>

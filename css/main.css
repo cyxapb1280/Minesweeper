@@ -16,14 +16,14 @@ input {
     width: 100px;
 }
 
-#timer, #mines {
+.timer, .mines {
     float: left;
     width: 50%;
     margin-top: 2px;
     font-size: 34px;
     color: #45759e;
 }
-#mines {
+.mines {
     text-align: right;
 }
 
